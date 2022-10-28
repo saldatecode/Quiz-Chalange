@@ -62,7 +62,7 @@ let questions = [
 ]
 
 const SCORE_POINTS = 100
-const MAX_QUESTIONS = 4
+const MAX_QUESTIONS = 5 || 6
 
 startGame = () => {
     questionCounter = 0
@@ -72,13 +72,14 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-    if (availableQuestion.length === 0 || questionCounter + 1 > MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score)
-
-        return window.location.assign('/end.html')
-    }
+console.log(availableQuestion)
 
     questionCounter++
+    if (availableQuestion.length === 2 || questionCounter - 1 >= MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score)
+
+        window.location = 'file:///C:/Users/salda/Desktop/Boot%20Camp/projects/Weekly%20Challenges/Week%204/Quiz-Chalange/end.html'
+    }
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`
 
