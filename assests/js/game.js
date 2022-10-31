@@ -17,7 +17,7 @@ let questions = [
         choice2: '22',
         choice3: '21',
         choice4: '32',
-        answer: 2,
+        answer: 1,
     },
     {
         question: 'Whats Your favorite food?',
@@ -62,7 +62,7 @@ let questions = [
 ]
 
 const SCORE_POINTS = 100
-const MAX_QUESTIONS = 5 || 6
+const MAX_QUESTIONS = 4 || 6
 
 startGame = () => {
     questionCounter = 0
