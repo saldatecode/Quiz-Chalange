@@ -7,6 +7,7 @@ const progressBarFull = document.querySelector('#progressBarFull');
 let currentQuestion = {}
 let acceptingAnswer = true
 let score = 0
+let scores = []
 let questionCounter = 0
 let availableQuestion = []
 
@@ -76,7 +77,8 @@ console.log(availableQuestion)
 
     questionCounter++
     if (availableQuestion.length === 2 || questionCounter - 1 >= MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score)
+        scores.push(score)
+        localStorage.setItem('mostRecentScore', JSON.stringify(scores))
 
         window.location = 'file:///C:/Users/salda/Desktop/Boot%20Camp/projects/Weekly%20Challenges/Week%204/Quiz-Chalange/end.html'
     }
